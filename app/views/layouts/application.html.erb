@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  	<%= link_to 'Home', welcome_index_path %>
+  	<%= link_to 'Donation', donations_path %>
+  	<%= link_to 'FAQs', welcome_faqs_path %>
+  	<%= link_to 'About Us', welcome_about_path %>
+
     <%= yield %>
   </body>
 </html>

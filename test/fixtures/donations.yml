@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-03-17 22:33:24
+  firstname: MyString
+  lastname: MyString
+  company: MyString
+  amout: 9.99
+
+two:
+  date: 2017-03-17 22:33:24
+  firstname: MyString
+  lastname: MyString
+  company: MyString
+  amout: 9.99
