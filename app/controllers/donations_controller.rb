@@ -4,7 +4,9 @@ class DonationsController < ApplicationController
   # GET /donations
   # GET /donations.json
   def index
-    @donations = Donation.all
+   # @donations = Donation.all
+    @search = DonationSearch.new(params[:search])
+    @donations = @search.scope
   end
 
   # GET /donations/1
