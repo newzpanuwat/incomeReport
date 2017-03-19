@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :companies do
+  	collection { post :import }
+  end
+
+
   get 'welcome/index'
 
   get 'welcome/donation'
@@ -9,5 +14,5 @@ Rails.application.routes.draw do
 
   resources :donations
  
- root to: 'welcome#index'
+ root to: "welcome#index"
 end

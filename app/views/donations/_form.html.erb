@@ -1,42 +1,55 @@
-<%= form_for(donation) do |f| %>
-  <% if donation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
+  <div class="row">
+  <%= form_for @donation, html: { class: 'form-horizontal' } do |f| %>
+    <% if donation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
 
-      <ul>
-      <% donation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% donation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="control-group">
+      <%= f.label :date, class: 'control-label' %><br>
+      <%= f.date_select :date %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :firstname, class: 'control-label' %><br>
+      <div class="controls">
+      <%= f.text_field :firstname %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :lastname, class: 'control-label' %><br>
+      <div class="controls">
+      <%= f.text_field :lastname %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :company, class: 'control-label' %><br>
+      <div class="controls">
+      <%= f.text_field :company %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :amout, class: 'control-label' %><br>
+      <div class="controls">
+      <%= f.text_field :amout %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+      <%= f.submit 'Submit', class: 'btn btn-sm btn-default'%>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
   </div>
-
-  <div class="field">
-    <%= f.label :firstname %>
-    <%= f.text_field :firstname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :company %>
-    <%= f.text_field :company %>
-  </div>
-
-  <div class="field">
-    <%= f.label :amout %>
-    <%= f.text_field :amout %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
